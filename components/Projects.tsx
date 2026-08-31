@@ -1,66 +1,80 @@
 "use client";
 
-import { GitFork, ExternalLink, Star } from "lucide-react";
+import { GitFork, ExternalLink, Star, DecimalsArrowRightIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "MyHerat",
     description:
-      "Full-stack e-commerce solution with real-time inventory, payment processing, and admin dashboard. Built with Next.js 14, PostgreSQL, and Stripe.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Tailwind CSS"],
-    image: "/projects/ecommerce.png",
-    github: "https://github.com",
+      "A comprehensive web platform for Herat featuring hotels, vehicle rentals, tour guides, and local services. Built with a modern multilingual interface and an admin dashboard for managing platform content.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Prisma",
+      "MongoDB",
+      "next-intl",
+    ],
+    image: "/projects/myherat.png",
+    github: "https://github.com/mossicode/mossicode",
+    demo: "https://myherat.com",
+    featured: true,
+  },
+  {
+    title: "EIMS",
+    description:
+      "A modern management system designed to organize and manage business data through a responsive dashboard with forms, tables, filtering, and administrative features.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Prisma",
+      "MongoDB",
+    ],
+    image: "/projects/eims.png",
+    github: "https://github.com/mossicode/mossicode",
     demo: "https://demo.example.com",
     featured: true,
   },
   {
-    title: "Task Management App",
+    title: "Hotel Management System",
     description:
-      "Collaborative project management tool with real-time updates, team workspaces, and advanced filtering. Inspired by Linear and Notion.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB", "Redis", "TypeScript"],
-    image: "/projects/taskapp.png",
-    github: "https://github.com",
+      "A hotel management platform with multilingual hotel information, room management, ratings, filtering, image galleries, and an administrative interface for creating and editing hotels.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "React Hook Form",
+      "Zod",
+      "Prisma",
+    ],
+    image: "/projects/hotel-management.png",
+    github: "https://github.com/mossicode",
     demo: "https://demo.example.com",
     featured: true,
   },
   {
-    title: "Developer Portfolio Template",
+    title: "Vehicle Rental Management",
     description:
-      "Modern, accessible portfolio template with dark mode, animations, and CMS integration. Open source with 2k+ stars on GitHub.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "MDX", "TypeScript"],
-    image: "/projects/portfolio.png",
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: false,
-  },
-  {
-    title: "Real-time Chat Application",
-    description:
-      "Scalable chat application with rooms, direct messages, file sharing, and end-to-end encryption. WebSocket-based architecture.",
-    tech: ["React", "Node.js", "WebSocket", "PostgreSQL", "TypeScript", "Docker"],
-    image: "/projects/chat.png",
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: false,
-  },
-  {
-    title: "Analytics Dashboard",
-    description:
-      "Business intelligence dashboard with customizable widgets, real-time data visualization, and export capabilities.",
-    tech: ["React", "D3.js", "Node.js", "ClickHouse", "TypeScript", "Tailwind CSS"],
-    image: "/projects/analytics.png",
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: false,
-  },
-  {
-    title: "CI/CD Pipeline Tool",
-    description:
-      "Developer tool for managing CI/CD pipelines with visual workflow builder, deployment tracking, and rollback capabilities.",
-    tech: ["React", "Go", "Kubernetes", "GraphQL", "TypeScript", "PostgreSQL"],
-    image: "/projects/cicd.png",
-    github: "https://github.com",
+      "A vehicle rental management system with administrative pages for managing rental vehicles, detailed vehicle information, forms, filtering, and CRUD operations.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "React Hook Form",
+      "Zod",
+      "Prisma",
+    ],
+    image: "/projects/vehicle-rental.png",
+    github: "https://github.com/mossicode",
     demo: "https://demo.example.com",
     featured: false,
   },
@@ -68,21 +82,16 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 px-8">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
-            Projects
-          </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
-            Selected <span className="text-primary">Work</span>
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            A collection of projects showcasing full-stack development expertise across various domains and technologies.
-          </p>
+    <section id="projects" className="py-20 px-8 max-md:py-12 max-md:px-4">
+      <div className="max-w-7xl">
+        <div className=" mb-10">
+          <div className="flex items-center gap-2 mb-4">
+        <DecimalsArrowRightIcon className="w-8 h-8 text-primary max-md:h-6 max-md:w-6" />
+        <h2 className="font-heading text-4xl max-md:text-2xl font-bold">Projects</h2>
+      </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <article
               key={index}
@@ -96,7 +105,7 @@ export default function Projects() {
                   <span className="text-sm font-mono">Project Preview</span>
                 </div>
                 {project.featured && (
-                  <div className="absolute top-4 right-4">
+                  <div className="absolute top-4 right-4 group">
                     <span className="bg-primary/90 text-primary-foreground px-2 py-1 rounded-full text-xs font-medium">
                       Featured
                     </span>
@@ -104,7 +113,7 @@ export default function Projects() {
                 )}
               </div>
 
-              <div className="p-6 space-y-4">
+              <div className="p-6 space-y-4 group">
                 <h3 className="font-heading text-xl font-bold">{project.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
 
@@ -144,10 +153,10 @@ export default function Projects() {
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-9 h-9 flex items-center justify-center rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                      className="w-9 h-9 flex items-center justify-center rounded-lg  text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
                       aria-label="View Demo"
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="w-4 h-4 group-hover:w-6 group-hover:h-6 group-hover:text-green-600" />
                     </a>
                   </div>
                 </div>
@@ -158,7 +167,7 @@ export default function Projects() {
 
         <div className="text-center mt-12">
           <a
-            href="https://github.com"
+            href="https://github.com/mossicode"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border bg-transparent text-foreground rounded-none text-sm font-semibold tracking-widest uppercase hover:bg-muted transition-colors"

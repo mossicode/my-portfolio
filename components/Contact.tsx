@@ -37,30 +37,30 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="contact" className="py-20 px-8 max-md:py-12 max-md:px-0">
+      <div className=" mx-auto">
         <div className="text-center mb-16">
-          <p className="text-primary font-mono text-sm tracking-wider uppercase mb-4">
+          <p className="text-primary font-mono text-sm uppercase mb-4">
             Contact
           </p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="font-heading text-2xl md:text-5xl font-bold mb-6">
             Let&rsquo;s <span className="text-primary">Work Together</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg mx-auto px-4">
             Have a project in mind or just want to say hello? I&apos;d love to hear from you.
             Feel free to reach out through any of the channels below.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-2 gap-2 mx-2">
           <div className="lg:col-span-1 space-y-8">
-            <div className="bg-card rounded-2xl border border-border p-6">
+            <div className="bg-card rounded-2xl border border-border p-2">
               <h3 className="font-heading text-xl font-bold mb-6">Get In Touch</h3>
-              <div className="space-y-4">
+              <div className="space-y-4 mx-2">
                 {[
-                  { icon: Mail, label: "Email", value: "mostafa@example.com", href: "mailto:mostafa@example.com" },
-                  { icon: MapPin, label: "Location", value: "San Francisco, CA", href: undefined },
-                  { icon: GitFork, label: "GitHub", value: "@mostafa", href: "https://github.com" },
+                  { icon: Mail, label: "Email", value: "mostafanasri3205@gmail.com", href: "mailto:mostafaasnari3205@gmail.com" },
+                  { icon: MapPin, label: "Location", value: "Herat, Afghanistan", href: undefined },
+                  { icon: GitFork, label: "GitHub", value: "@mossicode", href: "https://github.com/mossicde" },
                 ].map((item, index) => (
                   <a
                     key={index}
@@ -77,7 +77,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-medium">{item.value}</p>
+                      <p className="font-medium max-md:text-xs">{item.value}</p>
                     </div>
                   </a>
                 ))}
@@ -103,9 +103,9 @@ export default function Contact() {
             </div>
           </div>
 
-          <div className="lg:col-span-2">
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl border border-border p-8 space-y-6" noValidate>
-              <div className="grid md:grid-cols-2 gap-6">
+          <div className="lg:col-span-1 mx-2">
+            <form onSubmit={handleSubmit} className="bg-card flex flex-col gap-y-2" noValidate>
+              <div className="grid md:grid-cols-1 gap-3 mb-2">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
                     Name
