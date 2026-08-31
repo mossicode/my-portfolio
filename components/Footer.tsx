@@ -1,47 +1,44 @@
 "use client";
 
-import { GitFork, User, AtSign, Mail, Heart, Code } from "lucide-react";
+import { Mail, MapPin, Phone, Share } from "lucide-react";
+
+const socialLinks = [
+  { name: "GitHub", href: "https://github.com/mossicode", icon: Share, color: "hover:text-gray-400" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/mostafaansari", icon: Phone, color: "hover:text-blue-400" },
+  { name: "instagram", href: "https://instagram.com/mostafaansari3205", icon: Phone, color: "hover:text-sky-400" },
+];
+
+const contactInfo = [
+  { label: "Email", value: "mostafaansari@gmail.com", icon: Mail, href: "mailto:mostafaansari3205@gmail.com" },
+  { label: "Location", value: "Herat, Afghanistan", icon: MapPin },
+  { label: "Phone", value: "+93 770616817", icon: Phone, href: "tel:+93 770616817" },
+];
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const navLinks = [
-    { label: "Home", href: "#" },
-    { label: "About", href: "#about" },
-    { label: "Projects", href: "#projects" },
-    { label: "Skills", href: "#skills" },
-    { label: "Contact", href: "#contact" },
-  ];
-
-  const socialLinks = [
-    { icon: GitFork, href: "https://github.com", label: "GitHub" },
-    { icon: User, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: AtSign, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:mostafa@example.com", label: "Email" },
-  ];
-
   return (
-    <footer className="bg-muted/30 border-t border-border">
-      <div className="max-w-6xl mx-auto px-8 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          <div className="md:col-span-2">
+    <footer className="border-t border-border py-12 md:py-16">
+      <div className="max-w-6xl mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+          {/* About / Brand */}
+          <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <Code className="w-6 h-6 text-primary" />
-              <span className="font-heading text-xl font-bold">Mostafa Ansari</span>
+              <span className="text-2xl font-heading font-bold text-foreground">MA</span>
             </div>
-            <p className="text-muted-foreground max-w-sm mb-6">
-              Full Stack Developer crafting digital experiences with modern technologies.
-              Passionate about clean code, performance, and developer experience.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-6 max-w-xs">
+              Full-stack developer crafting clean, user-friendly digital experiences.
+              Blending creativity with functionality to bring ideas to life.
             </p>
-            <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
+            <div className="flex items-center gap-6">
+              {socialLinks.map((social) => (
                 <a
-                  key={index}
+                  key={social.name}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
-                  aria-label={social.label}
+                  className={`text-muted-foreground transition-colors ${social.color} text-xl`}
+                  aria-label={social.name}
                 >
                   <social.icon className="w-5 h-5" />
                 </a>
@@ -49,56 +46,52 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Navigation</h4>
-            <nav className="space-y-2">
-              {navLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors block"
-                >
-                  {link.label}
-                </a>
+          {/* Contact */}
+          <div className="md:col-span-1">
+            <h3 className="font-heading text-lg font-semibold mb-4">Get in Touch</h3>
+            <ul className="space-y-3">
+              {contactInfo.map((item) => (
+                <li key={item.label} className="flex items-start gap-3">
+                  <item.icon className="w-5 h-5 text-muted-foreground shrink-0 mt-0.5" aria-hidden="true" />
+                  <div>
+                    <span className="text-xs text-muted-foreground/70 uppercase tracking-wider">{item.label}</span>
+                    <p className="text-sm text-foreground">
+                      {item.href ? (
+                        <a href={item.href} className="hover:text-primary transition-colors">
+                          {item.value}
+                        </a>
+                      ) : (
+                        item.value
+                      )}
+                    </p>
+                  </div>
+                </li>
               ))}
-            </nav>
+            </ul>
           </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Resources</h4>
+          {/* Quick Links */}
+          <div className="md:col-span-1">
+            <h3 className="font-heading text-lg font-semibold mb-4">Quick Links</h3>
             <nav className="space-y-2">
-              {[
-                { label: "GitHub Profile", href: "https://github.com" },
-                { label: "LinkedIn", href: "https://linkedin.com" },
-                { label: "Resume", href: "#" },
-                { label: "Blog", href: "#" },
-              ].map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                  className="text-sm text-muted-foreground hover:text-primary transition-colors block"
-                >
-                  {link.label}
-                </a>
-              ))}
+              <a href="#hero" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Home</a>
+              <a href="#about" className="block text-sm text-muted-foreground hover:text-primary transition-colors">About</a>
+              <a href="#projects" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Projects</a>
+              <a href="#skills" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Skills</a>
+              <a href="#experience" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Experience</a>
+              <a href="#contact" className="block text-sm text-muted-foreground hover:text-primary transition-colors">Contact</a>
             </nav>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-muted-foreground">
-              © {currentYear} Mostafa Ansari. All rights reserved.
-            </p>
-            <p className="text-sm text-muted-foreground flex items-center gap-2">
-              Built with
-              <Code className="w-4 h-4" />
-              Next.js, Tailwind CSS, and{" "}
-              <Heart className="w-4 h-4 text-red-500" />
-            </p>
-          </div>
+        {/* Bottom Bar */}
+        <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Mostafa Ansari. All rights reserved.
+          </p>
+          <p className="text-sm text-muted-foreground/70">
+            Built with Next.js & Tailwind CSS
+          </p>
         </div>
       </div>
     </footer>

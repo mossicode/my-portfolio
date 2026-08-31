@@ -8,14 +8,19 @@ const playfairDisplayHeading = Playfair_Display({ subsets: ["latin"], variable: 
 const notoSans = Noto_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: "Mostafa Ansari | Full Stack Developer",
-  description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies. Building scalable applications with clean code.",
+  title: "Mostafa Ansari | Full-Stack Web Developer",
+
+  description:
+    "Full-Stack Web Developer specializing in building modern, responsive, and scalable web applications with Next.js, React, TypeScript, and modern web technologies.",
+
   icons: {
     icon: "/favicon.ico",
   },
+
   openGraph: {
-    title: "Mostafa Ansari | Full Stack Developer",
-    description: "Full Stack Developer specializing in React, Next.js, TypeScript, and modern web technologies.",
+    title: "Mostafa Ansari | Full-Stack Web Developer",
+    description:
+      "Full-Stack Web Developer building modern, responsive, and scalable web applications with Next.js, React, and TypeScript.",
     type: "website",
   },
 };
@@ -28,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
+      className={cn("h-full", "dark", "antialiased", "font-sans", notoSans.variable, playfairDisplayHeading.variable)}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
