@@ -286,7 +286,7 @@ const LightTunnel = ({
     ro.observe(container);
     setSize();
 
-    let currentMouse = [0.5, 0.5];
+    const currentMouse = [0.5, 0.5];
     let targetMouse = [0.5, 0.5];
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -359,10 +359,9 @@ const LightTunnel = ({
       ctxMap.delete(container);
       try {
         container.removeChild(canvas);
-      } catch {}
+      } catch { }
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {

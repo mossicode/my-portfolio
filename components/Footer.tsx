@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone, Share } from "lucide-react";
 
 const socialLinks = [
   { name: "GitHub", href: "https://github.com/mossicode", icon: Share, color: "hover:text-gray-400" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/mostafaansari", icon: Phone, color: "hover:text-blue-400" },
+  { name: "LinkedIn", href: "https://linkedin.com/mostafa-ansari", icon: Phone, color: "hover:text-blue-400" },
   { name: "instagram", href: "https://instagram.com/mostafaansari3205", icon: Phone, color: "hover:text-sky-400" },
 ];
 
