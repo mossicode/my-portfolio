@@ -5,19 +5,17 @@ import { Button } from "@/components/ui/button";
 import {
   Camera,
   AtSign,
-  Video,
-  PenTool,
-  Globe,
   Download,
   Send,
   Phone,
   Mail,
 } from "lucide-react";
 import Image from "next/image";
+import Instagram from "../icons/Instagram";
 
 function LeftSidebar() {
   return (
-    <div id="about" className="relative flex flex-col items-center md:justify-center p-4 pt-10 md:pt-4 w-full md:h-screen md:overflow-y-auto overflow-x-hidden">
+    <div id="about" className="relative flex flex-col items-center md:justify-center p-4 pt-10 md:pt-4 w-full md:h-screen overflow-x-hidden">
       <div className="w-full bg-card/50 backdrop-blur-sm rounded-2xl border border-border p-3 md:p-5 flex flex-col items-center gap-4 md:gap-5">
         {/* Profile Image */}
         <div className="relative w-full h-48 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-border">
@@ -48,35 +46,35 @@ function LeftSidebar() {
           <a
             href="github.com/mossicode"
             target="_blank"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+            className="wavy-hover w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center transition-colors"
           >
             <Camera className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
           <a
-            href="linkedIn.com/mostafa-ansari"
+            href="https://www.linkedin.com/in/mostafa-ansari-0846493b3/"
             target="_blank"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+            className="wavy-hover w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center transition-colors"
           >
             <AtSign className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
           <a
             href="mailto:mostafanasari3205@gmail.com"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+            className="wavy-hover w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center transition-colors"
           >
             <Mail className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
           <a
             href="tel:0770616817"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+            className="wavy-hover w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center transition-colors"
           >
             <Phone className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
           <a
-            href="instagram.com/mostafanasari3205"
+            href="https://instagram.com/mostafanasari3205"
             target="_blank"
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center hover:bg-accent hover:border-accent transition-colors"
+            className="wavy-hover w-8 h-8 md:w-10 md:h-10 rounded-full border border-border flex items-center justify-center transition-colors"
           >
-            <Globe className="w-3.5 h-3.5 md:w-4 md:h-4" />
+            <Instagram className="w-3.5 h-3.5 md:w-4 md:h-4" />
           </a>
         </div>
 
