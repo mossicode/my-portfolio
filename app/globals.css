@@ -162,6 +162,29 @@
   }
 
   .scroll-smooth {
-    scroll-behavior: smooth;
+    scroll-smooth: smooth;
   }
+
+  @keyframes wavyBounce {
+    0%, 100% { transform: translateY(0); }
+    25% { transform: translateY(-5px); }
+    50% { transform: translateY(0); }
+    75% { transform: translateY(-3px); }
+  }
+
+  .wavy-hover {
+    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .wavy-hover:hover {
+    animation: wavyBounce 0.6s ease-in-out;
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .wavy-hover:nth-child(1):hover { animation-delay: 0ms; }
+  .wavy-hover:nth-child(2):hover { animation-delay: 80ms; }
+  .wavy-hover:nth-child(3):hover { animation-delay: 160ms; }
+  .wavy-hover:nth-child(4):hover { animation-delay: 240ms; }
+  .wavy-hover:nth-child(5):hover { animation-delay: 320ms; }
 }
