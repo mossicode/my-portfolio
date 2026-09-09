@@ -17,10 +17,20 @@ export default function Contact() {
     e.preventDefault();
     setStatus("submitting");
 
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    setStatus("success");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      if (!res.ok) throw new Error("Failed to send");
+
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
 
     setTimeout(() => setStatus("idle"), 5000);
   };
@@ -31,7 +41,7 @@ export default function Contact() {
 
   const socialLinks = [
     { icon: GitFork, href: "https://github.com/mossicode", label: "GitHub" },
-    { icon: User, href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: User, href: "https://mlinkedIn.com/mostafa-ansari", label: "LinkedIn" },
     { icon: AtSign, href: "https://twitter.com", label: "Twitter" },
     { icon: Mail, href: "mailto:mostafa@example.com", label: "Email" },
   ];
